@@ -48,11 +48,11 @@ async function findUserTasks(id){
 // test("Hayelom")
 // createTask('62010bdfe44e78aff186ebf4',"test 2","test 2 description");
 // setTimeout(()=>{test("hayelom")},3000)
-//  findUserTasks('62010bdfe44e78aff186ebf4');
+ findUserTasks('62010bdfe44e78aff186ebf4');
 async function findUserByNameINDB(name){
     //    const result =await Users.findByName(name);
     const result =await Users.find().byName(name);// you can't call by name directly
-       console.log(result.toJSON())
+    //    console.log(result.toJSON())
 }
  findUserByNameINDB("Hayelom")
 app.listen(9000,()=>{ 
