@@ -41,7 +41,15 @@ async function createTask(owner,name,desc){
     console.log(result)
 }
 async function findUserTasks(id){
-    const userTasks = await Users.findById(id).populate('tasks');
+    const userTasks = await Users.findById(id).populate({
+        path:'tasks',
+        match:{
+            // _id:"62010bfc1f4fd10fb025fd39",
+            name:RegExp('test','i')
+        }
+    });
+    
+    // const userTasks = await Users.findById(id).populate('tasks');
     // await userTasks.populate('mytasks').execP
     console.log(userTasks);
 }
